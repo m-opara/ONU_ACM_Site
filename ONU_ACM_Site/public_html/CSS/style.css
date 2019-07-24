@@ -1,0 +1,190 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 23, 2019, 5:50:19 PM
+    Author     : Matthew Opara
+*/
+
+body{
+    font-family: BrandonText-Regular, Helvetica, Arial, sans-serif;
+    font-size:15px;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+    background-color: #333132;
+    background-image: url("../Images/CircuitPattern1.png"), url("../Images/CircuitPattern1flip.png");
+    background-size: 20%, 20%;
+    background-repeat: repeat-y, repeat-y;
+    background-position: left top, right top;
+}
+
+/*Global*/
+.container{
+    width: 70vw;
+    margin: auto;
+    overflow: hidden;
+}
+
+nav{
+    background-color: #f26b27;
+}
+
+/*header*/
+header{
+    color: white;
+    background-color: #231f20;
+    border-bottom: 5px solid #f05032;
+    padding-top: 30px;
+    min-height: 70px;
+}
+
+header .container{
+    /*max-width: 1200px;*/
+}
+
+header a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header ul{
+    margin: 0;
+    padding: 0;
+}
+
+header li{
+    float: left;
+    display: inline;
+    padding: 10px 20px;
+}
+
+nav .social li{
+    float: right;
+    display: inline;
+    padding: 0 5px 0 5px;
+    
+}
+
+header #branding{
+    float: left;
+    display: inline-block;
+    overflow: auto;
+}
+
+header #branding h1{
+    margin: 0;
+    padding-top: 3.5vh;
+    padding-left: 20px;
+    text-align: center;
+    float: right;
+    font-size: 5vw;
+}
+
+header #branding img{
+    width: 200px;
+    padding-bottom: 15px;
+    float: left;
+}
+
+header #branding figure{
+    margin: 0;
+}
+
+.ACMColor{
+    color: #55b4e0;
+}
+
+.ONUColor{
+    color: #f26b27;
+}
+
+.navWrap{
+    padding: 0;
+    text-align: center;
+}
+
+.pages{
+    display: inline-block;
+}
+
+.social{
+    float: right;
+}
+
+.current{
+    background-color: #f05032;
+    font-weight: bold;
+}
+
+header li:hover{
+    background-color: #f05032;
+    font-weight: bold;
+}
+
+/*spotLight*/
+#spotLight{
+    min-height: 400px;
+    width: 100vw;
+    background:url('../Images/tech.jpg')no-repeat;
+    background-position: center; 
+    padding-top: 25px;
+    text-align: center;
+    color: white;    
+}
+
+#spotLight h1{
+    margin-top: 100px;
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+#spotLight p{
+    font-size: 20px;
+}
+
+/*content*/
+
+#synopsis{
+    color: white;
+    padding-bottom: 50px;
+}
+
+#synopsis h3{
+    margin-top: 40px;
+    margin-bottom: 0;
+    font-size: 40px;
+    background-color: #f26b27;
+    padding-left: 25px; 
+}
+
+#synopsis p{
+    font-size: 20px;
+    padding: 15px;
+    margin: 0;
+    background-color: #231f20;
+    padding-bottom: 35px; 
+}
+
+#synopsis iframe{
+    background-color: #231f20;
+    width: 96%;
+    height: 250px;
+    padding: 2%;
+    color: white;
+}
+
+/*footer*/
+footer{
+    color: white;
+    text-align: center;
+    background-color: #231f20;
+    border-top: 5px solid #f05032;
+    padding-top: 30px;
+    min-height: 70px;
+    
+}
