@@ -32,6 +32,23 @@ nav{
     background-color: #f26b27;
 }
 
+.title{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 50px;
+    background-color: #f26b27;
+    padding-left: 25px; 
+}
+
+.portraitWrap img{
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+}
+
 /*header*/
 header{
     color: white;
@@ -149,12 +166,12 @@ header li:hover{
 
 /*content*/
 
-#synopsis{
+#textStyle1{
     color: white;
     padding-bottom: 50px;
 }
 
-#synopsis h3{
+#textStyle1 h3{
     margin-top: 40px;
     margin-bottom: 0;
     font-size: 40px;
@@ -162,7 +179,15 @@ header li:hover{
     padding-left: 25px; 
 }
 
-#synopsis p{
+#textStyle1 h2{
+    margin-top: 40px;
+    margin-bottom: 0;
+    font-size: 30px;
+    background-color: #f26b27;
+    padding-left: 50px; 
+}
+
+#textStyle1 p{
     font-size: 20px;
     padding: 15px;
     margin: 0;
@@ -170,12 +195,26 @@ header li:hover{
     padding-bottom: 35px; 
 }
 
-#synopsis iframe{
+#textStyle1 a{
+    color: white;
+    text-decoration: none;
+}
+
+#textStyle1 iframe{
     background-color: #231f20;
     width: 96%;
     height: 250px;
     padding: 2%;
-    color: white;
+}
+
+.accountLinks{
+    font-size: 25px;
+    text-align: center;
+    padding-bottom: 5px;
+    margin: 0;
+    background-color: #231f20;
+    border-bottom: 5px solid #f05032;
+    
 }
 
 /*footer*/
@@ -186,5 +225,51 @@ footer{
     border-top: 5px solid #f05032;
     padding-top: 30px;
     min-height: 70px;
+    
+}
+
+@media(max-width: 768px){
+    header #branding, header #branding img, header #branding h1, header nav, header nav li{
+        float: none;
+        text-align:center;
+        width: 100%
+    }
+    header #branding h1{
+        padding: 0;
+        font-size: 7.5vw;
+    }   
+    
+    header #branding img{
+        width: 35vw;
+    }
+    
+    header li{
+        padding-bottom: 50px;
+        padding: 5px;
+        margin: 10px;
+    }
+    
+    header ul{
+        padding: 5px;
+    }
+    
+    header .container{
+        width: 100vw;
+    }
+    
+    .container{
+        width: 85vw;
+    }
+    
+    /*text style 1*/
+    #textStyle1 h2{
+    margin-bottom: 0;
+    padding: 0;
+    text-align:center;
+    }
+    
+    .portraitWrap img{
+        width: 200px;
+    }
     
 }
