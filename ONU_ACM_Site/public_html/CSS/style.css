@@ -197,13 +197,26 @@ header li:hover{
 
 #textStyle1 a{
     color: white;
-    text-decoration: none;
 }
 
-#textStyle1 iframe{
+iframe.smallCal{
     background-color: #231f20;
     width: 96%;
     height: 250px;
+    padding: 2%;
+}
+
+iframe.largeCal{
+    background-color: #231f20;
+    width: 96%;
+    height: 600px;
+    padding: 2%;
+}
+
+iframe.largeForm{
+    background-color: #231f20;
+    width: 96%;
+    height:675px;
     padding: 2%;
 }
 
@@ -277,8 +290,11 @@ footer{
         width: 180px;
         display: block;
         margin-left: auto;
-        margin-right: auto;
-        
+        margin-right: auto; 
+    }
+    
+    iframe.largeCal{
+        height: 350px;
     }
     
 }
