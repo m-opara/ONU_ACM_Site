@@ -262,14 +262,23 @@ footer{
     }
     
     /*text style 1*/
-    #textStyle1 h2{
+    #textStyle1 h2, #textStyle1 h3, .title{
     margin-bottom: 0;
     padding: 0;
     text-align:center;
     }
     
+    .title{
+        font-size: 40px;
+        padding-left: 0;
+    }
+    
     .portraitWrap img{
-        width: 200px;
+        width: 180px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        
     }
     
 }
