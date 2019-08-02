@@ -46,7 +46,15 @@ nav{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 350px;
+    width: 500px;
+}
+
+hr{
+    padding: 15px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: #f05032;
 }
 
 /*header*/
@@ -72,6 +80,8 @@ header a{
 header ul{
     margin: 0;
     padding: 0;
+    list-style-type: none;
+    overflow: hidden;
 }
 
 header li{
@@ -80,6 +90,41 @@ header li{
     padding: 10px 20px;
 }
 
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    /*padding: 14px 16px;*/
+    text-decoration: none;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 nav .social li{
     float: right;
     display: inline;
@@ -182,6 +227,8 @@ header li:hover{
 #textStyle1 h2{
     margin-top: 40px;
     margin-bottom: 0;
+    margin-left: 5px;
+    margin-right: 5px;
     font-size: 30px;
     background-color: #f26b27;
     padding-left: 50px; 
@@ -228,6 +275,26 @@ iframe.largeForm{
     background-color: #231f20;
     border-bottom: 5px solid #f05032;
     
+}
+
+/*Council index*/
+.councilPrevew{
+    float: left;
+    width: 50%;
+    padding: 0px;
+}
+
+.councilPrevew:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+img.councilPrevewImg{
+    width: 75%;
+    padding: 5px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /*gallery*/
@@ -305,7 +372,7 @@ footer{
     header #branding, header #branding img, header #branding h1, header nav, header nav li{
         float: none;
         text-align:center;
-        width: 100%
+        /*width: 100%*/
     }
     header #branding h1{
         padding: 0;
@@ -319,7 +386,9 @@ footer{
     header li{
         padding-bottom: 50px;
         padding: 5px;
-        margin: 10px;
+        /*margin: 10px;*/
+        float: none;
+        width: auto;
     }
     
     header ul{
@@ -347,7 +416,7 @@ footer{
     }
     
     .portraitWrap img{
-        width: 180px;
+        width: 300px;
         display: block;
         margin-left: auto;
         margin-right: auto; 
@@ -357,4 +426,7 @@ footer{
         height: 350px;
     }
     
+    .councilPrevew{
+        width: 100%;
+    }
 }
