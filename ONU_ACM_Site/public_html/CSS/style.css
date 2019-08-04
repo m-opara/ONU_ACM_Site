@@ -234,6 +234,16 @@ header li:hover{
     padding-left: 50px; 
 }
 
+#textStyle1 h1{
+    margin-top: 10px;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 25px;
+    background-color: #f26b27; 
+}
+
 #textStyle1 p{
     font-size: 20px;
     padding: 15px;
@@ -280,7 +290,7 @@ iframe.largeForm{
 /*Council index*/
 .councilPrevew{
     float: left;
-    width: 50%;
+    width: 33.33%;
     padding: 0px;
 }
 
@@ -404,7 +414,7 @@ footer{
     }
     
     /*text style 1*/
-    #textStyle1 h2, #textStyle1 h3, .title{
+    #textStyle1 h2, #textStyle1 h3, #textStyle1 h1, .title{
     margin-bottom: 0;
     padding: 0;
     text-align:center;
