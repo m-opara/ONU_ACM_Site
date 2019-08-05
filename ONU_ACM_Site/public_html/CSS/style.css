@@ -368,13 +368,17 @@ img.councilPrevewImg{
 }
 
 /*footer*/
+.nonFooter{
+    min-height: 86.5vh;
+}
+
 footer{
     color: white;
     text-align: center;
     background-color: #231f20;
-    border-top: 5px solid #f05032;
-    padding-top: 30px;
-    min-height: 70px;
+    border-top: .5vh solid #f05032;
+    padding-top: 3vh;
+    min-height: 10vh;
     
 }
 
@@ -382,7 +386,7 @@ footer{
     header #branding, header #branding img, header #branding h1, header nav, header nav li{
         float: none;
         text-align:center;
-        /*width: 100%*/
+        width: 100%
     }
     header #branding h1{
         padding: 0;
@@ -396,9 +400,12 @@ footer{
     header li{
         padding-bottom: 50px;
         padding: 5px;
-        /*margin: 10px;*/
-        float: none;
-        width: auto;
+        margin: 10px;
+        float: none;   
+    }
+    
+    li.dropdown{
+        display: inline;
     }
     
     header ul{
