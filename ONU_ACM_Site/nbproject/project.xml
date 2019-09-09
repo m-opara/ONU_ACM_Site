@@ -5,5 +5,11 @@
         <data xmlns="http://www.netbeans.org/ns/php-project/1">
             <name>ONU_ACM_Site</name>
         </data>
+        <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>Braden</word>
+            <word>Hammel</word>
+            <word>kayaking</word>
+            <word>Schweinefuss</word>
+        </spellchecker-wordlist>
     </configuration>
 </project>
