@@ -154,7 +154,7 @@
         <div class="container">
             <form method = "post" action = "">
                 <label for="first_name">First Name</label>
-                <input type="text" id="first_name" name="first_name" placeholder="Your name..">
+                <input type="text" id="first_name" name="first_name" placeholder="Your first name..">
 
                 <label for="last_name">Last Name</label>
                 <input type="text" id="last_name" name="last_name" placeholder="Your last name..">
@@ -163,7 +163,7 @@
                 <input type="text" id="email" name="email" placeholder="Your ONU email..">
                 
                 <label for="date_of_birth">Date of birth</label>
-                <input type="text" id="date_of_birth" name="date_of_birth" placeholder="Your ONU email..">
+                <input type="text" id="date_of_birth" name="date_of_birth" placeholder="Your date of birth..">
                 
                 <label for="graduating_year">Graduating Year</label>
                 <input type="text" id="graduating_year" name="graduating_year" placeholder="Your Graduating Year..">
