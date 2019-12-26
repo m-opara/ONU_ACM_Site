@@ -348,7 +348,7 @@ img.councilPrevewImg{
 }
 
 /*forms*/
-  width: 100%;
+form{
     background-color: #231f20;
     padding-top: 10px;
     padding-bottom: 10px;
