@@ -152,29 +152,246 @@
         </div>
             <article id="textStyle1">
         <div class="container">
-            <form method = "post" action = "">
-                <label for="first_name">First Name</label>
-                <input type="text" id="first_name" name="first_name" placeholder="Your first name..">
+            <form method = "post" action = "" enctype="multipart/form-data">
+                <label for="first_name">First Name</label><br>
+                <input type="text" id="first_name" name="first_name" maxlength="30" placeholder="Your first name.."><br>
 
-                <label for="last_name">Last Name</label>
-                <input type="text" id="last_name" name="last_name" placeholder="Your last name..">
+                <label for="last_name">Last Name</label><br>
+                <input type="text" id="last_name" name="last_name" maxlength="30" placeholder="Your last name.."><br>
                 
-                <label for="email">email</label>
-                <input type="text" id="email" name="email" placeholder="Your ONU email..">
+                <label for="email">email</label><br>
+                <input type="email" id="email" name="email" maxlength="255" placeholder="Your ONU email.."><br>
                 
-                <label for="date_of_birth">Date of birth</label>
-                <input type="text" id="date_of_birth" name="date_of_birth" placeholder="Your date of birth..">
+                <label for="date_of_birth">Date of birth</label><br>
+                <input type="date" id="date_of_birth" name="date_of_birth"><br>
                 
-                <label for="graduating_year">Graduating Year</label>
-                <input type="text" id="graduating_year" name="graduating_year" placeholder="Your Graduating Year..">
+                <label for="graduating_year">Graduating Year</label><br>
+                <input type="text" id="graduating_year" name="graduating_year" maxlength="4" placeholder="Your Graduating Year.."><br>
                                 
-                <label for="bio">Bio</label>
-                <textarea id="bio" name="bio" maxlength="500" placeholder="Who are you..?"></textarea>
+                <label for="bio">Bio</label><br>
+                <textarea id="bio" name="bio" maxlength="500" placeholder="Who are you..?"></textarea><br>
+                                
+                <label for="filleToUpload">Choose a photo</label><br>
+                <input type="file" name="fileToUpload" id="fileToUpload">
                 
+                <hr class="clearRule">
                 
-                
-                <input type="submit" value="Submit >>">
+                <input type="submit" name="submit" value="Submit >>">
             </form>
+            
+            <?php
+            
+            error_reporting(E_ALL);
+            ini_set('display_errors', 1);
+            
+            if(isset($_POST['submit'])){
+                echo 'yup1';
+                $data_missing = array();
+                $data_incorrect = array();
+                
+                $email_regex = "/^[a-zA-Z][-][a-zA-Z]{1,}[.]{0,1}[\d]{0,3}[@]{1}(onu.edu){1}$/";
+                                
+                $target_dir = "Images/members/";
+                
+                $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+                $uploadOk = 1;
+                $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+                if(empty($_POST['first_name'])){ 
+                    //Adds missing item to the array
+                    $data_missing[] = 'First Name';
+                } else {
+                    //removes excess white space and stores the name
+                    $f_name = trim($_POST['first_name']);
+                    echo $f_name;
+                }
+                
+                if(empty($_POST['last_name'])){
+                    //Adds missing item to the array
+                    $data_missing[] = 'Last Name';
+
+                } else{
+                    //removes excess white space and stores the name
+                    $l_name = trim($_POST['last_name']);
+                    echo $l_name;
+                }
+                
+//                if(empty($_POST['email'])){
+//                    //Adds missing item to the array
+//                    $data_missing[] = 'email';
+//
+//                } else{
+//                    $output_array = array();
+//                    preg_match($email_regex, $_POST['email'], $output_array);
+//                    
+//                    if(empty($output_array)){
+//                        $data_incorrect[] = 'Email must be an ONU email';
+//                    }else{
+//                        //removes excess white space and stores the name
+//                        $email = trim($_POST['email']);
+//                    }
+//                    
+//                }
+                
+                if(empty($_POST['email'])){
+                    //Adds missing item to the array
+                    $data_missing[] = 'email';
+
+                } else{
+                    //removes excess white space and stores the name
+                    $email = trim($_POST['email']);
+                    echo $email;
+                }
+                
+                if(empty($_POST['date_of_birth'])){
+                    //Adds missing item to the array
+                    $data_missing[] = 'Date of birth';
+
+                } else{
+                    //removes excess white space and stores the name
+                    $dob = trim($_POST['date_of_birth']);
+                    echo $dob;
+                }
+                
+                if(empty($_POST['graduating_year'])){
+                    //Adds missing item to the array
+                    $data_missing[] = 'Graduating year';
+
+                } else{
+                    //removes excess white space and stores the name
+                    $grad_year = trim($_POST['graduating_year']);
+                    echo $grad_year;
+                }
+                
+                if(empty($_POST['bio'])){
+                    //Adds missing item to the array
+                    $data_missing[] = 'Your Bio';
+
+                } else{
+                    //removes excess white space and stores the name
+                    $bio = trim($_POST['bio']);
+                    echo $bio;
+                }
+                
+//                if(empty($_POST['fileToUpload'])){
+//                    //Adds missing item to the array
+//                    $data_missing[] = 'Your Photo';
+//
+//                } else{
+                    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+                    if($check !== false) {
+                        //File is an image
+                        $uploadOk = 1;
+                        // Check if file already exists
+                        if (file_exists($target_file)) {
+                            $data_incorrect[] = 'Sorry, file already exists.(Try renaming the file)';
+                            $uploadOk = 0;
+                        }
+                        if ($_FILES["fileToUpload"]["size"] > 15000000) {
+                            $data_incorrect[] = 'Sorry, your file is too large.';
+                            $uploadOk = 0;
+                        }
+                        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+                            $data_incorrect[] = 'Sorry, only JPG, JPEG, PNG & GIF files are allowed.';
+                            $uploadOk = 0;
+                        }
+                    } else{
+                        $data_incorrect[] = 'File selected is not an image.';
+                        $uploadOk = 0;
+                    }
+                    
+                    // Check if $uploadOk is set to 0 by an error
+                    if ($uploadOk == 0) {
+                        $data_incorrect[] = 'Sorry, your file was not uploaded.';
+                    // if everything is ok, try to upload file
+                    } else{
+                        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+                            $success_info[] = 'Picture successfully uploaded!';
+                            echo $target_file;
+                        } else{
+                            
+                            echo '<script language="javascript">';
+                            echo 'alert("Sorry, there was an error uploading your file.")';
+                            echo '</script>';
+                        }
+                    }
+                //}
+                //If we don't have any saved error messages
+                if(empty($data_missing)&& empty($data_incorrect)){
+                    echo 'yup 2';
+                    
+                    require_once('../mysqli_connect.php');
+
+                    $query = "INSERT INTO members (id, first_name, last_name, email, date_of_birth, graduating_year, bio, photo_path, date_entered) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, NOW())";
+                    
+                    $stmt = $dbc->prepare("INSERT INTO `members` (`first_name`, `last_name`, `email`, `date_of_birth`, `graduating_year`, `bio`, `photo_path`, `date_entered`, `id`) VALUES (?, ?, ?, ?, ?, ?, ?, NOW(), NULL)");
+                    echo $stmt;
+                    $stmt->bind_param("sssssss", $f_name, $l_name, $email, $dob, $grad_year, $bio, $target_file);
+                    
+                    echo $stmt;
+                    
+                    if ($stmt == FALSE) {
+                        die($mysqli->error);
+                        echo 'NOPE';
+                    }
+                    $stmt->execute();
+                    
+//                    $stmt = mysqli_prepare($dbc, $query);
+//                    echo '$stmt: ' . $stmt;
+//                    //i Integers
+//                    //d Double
+//                    //b Blobs
+//                    //s Everything Else
+//                    echo '$target_file:' . $target_file;    
+//                    mysqli_stmt_bind_param($stmt, "sssssss", $f_name, $l_name, $email, $dob, $grad_year, $bio, $target_file);
+//                    
+//                    mysqli_stmt_execute($stmt);
+                    
+//                    $affected_rows = mysqli_stmt_affected_rows($stmt);
+//                    
+//                    if($affected_rows == 1){
+//            
+//                        echo 'yup3';
+//                        
+//                        echo '<script language="javascript">';
+//                        echo 'alert("Member Data Submitted!")';
+//                        echo '</script>';
+//                        
+//                        mysqli_stmt_close($stmt);
+//
+//                        mysqli_close($dbc);
+//            
+//                    } else {
+//                        
+//                        echo '<script language="javascript">';
+//                        echo 'alert("Error Occurred\n'. mysqli_error() .'")';
+//                        echo '</script>';
+//                        
+//                        mysqli_stmt_close($stmt);
+//                        
+//                        mysqli_close($dbc);
+//                    }
+//
+//                } else {
+//                    
+//                    echo json_encode($data_missing);
+//                    echo json_encode($data_incorrect);
+//                    
+//                    $error_sum =  'alert("You need to enter the following data\n"';
+//
+//                    foreach($data_missing as $missing){
+//
+//                        $error_sum = $error_sum . $missing . '\n';
+//
+//                    }
+//                    
+//                    echo '<script language="javascript">';
+//                    echo $error_sum .')';
+//                    echo '</script>';
+                }
+            }
+            ?>
+            
         </div>
         </article>
         </div>

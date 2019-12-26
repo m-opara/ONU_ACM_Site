@@ -348,18 +348,27 @@ img.councilPrevewImg{
 }
 
 /*forms*/
-input[type=text], select {
   width: 100%;
+    background-color: #231f20;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+input[type=text], select, input[type=email], input[type=date]{
+  width: 95%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 2px solid #f26b27;
   border-radius: 4px;
   box-sizing: border-box;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 input[type=submit] {
-  width: 100%;
+  width: 95%;
   background-color: #f26b27;
   color: white;
   padding: 14px 20px;
@@ -367,6 +376,27 @@ input[type=submit] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[type=file]{
+  width: 95%;
+  background-color: #f26b27;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+label{
+    margin-left: 20px;
 }
 
 input[type=submit]:hover {
@@ -374,13 +404,16 @@ input[type=submit]:hover {
 }
 
 textarea {
-  width: 100%;
+  width: 95%;
   height: 150px;
   padding: 12px 20px;
   box-sizing: border-box;
   border: 2px solid #f26b27;
   border-radius: 4px;
   resize: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 /*Sponsors*/
 .SponsTierOne{
