@@ -7,6 +7,7 @@
 function on(url) {
   document.getElementById("overlay").style.backgroundImage = 'url('+url+')';
   document.getElementById("overlay").style.backgroundRepeat = "no-repeat";
+  document.getElementById("overlay").style.backgroundSize = "contain";
   document.getElementById("overlay").style.display = "block";
 }
 
