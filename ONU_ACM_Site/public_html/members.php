@@ -185,7 +185,7 @@
             ini_set('display_errors', 1);
             
             if(isset($_POST['submit'])){
-                echo 'yup1';
+                echo 'pos1';
                 $data_missing = array();
                 $data_incorrect = array();
                 
@@ -215,7 +215,7 @@
                     $l_name = trim($_POST['last_name']);
                     echo $l_name;
                 }
-                
+// DEBUG                 
 //                if(empty($_POST['email'])){
 //                    //Adds missing item to the array
 //                    $data_missing[] = 'email';
@@ -272,7 +272,7 @@
                     $bio = trim($_POST['bio']);
                     echo $bio;
                 }
-                
+// DEBUG                 
 //                if(empty($_POST['fileToUpload'])){
 //                    //Adds missing item to the array
 //                    $data_missing[] = 'Your Photo';
@@ -318,7 +318,7 @@
                 //}
                 //If we don't have any saved error messages
                 if(empty($data_missing)&& empty($data_incorrect)){
-                    echo 'yup 2';
+                    echo 'pos 2';
                     
                     require_once('../mysqli_connect.php');
 
@@ -335,7 +335,7 @@
                         echo 'NOPE';
                     }
                     $stmt->execute();
-                    
+// DEBUG                    
 //                    $stmt = mysqli_prepare($dbc, $query);
 //                    echo '$stmt: ' . $stmt;
 //                    //i Integers
@@ -402,5 +402,3 @@
         </footer>
     </body>
 </html>
-
-
