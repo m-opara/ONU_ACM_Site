@@ -201,12 +201,28 @@ header li:hover{
 
 #spotLight h1{
     margin-top: 100px;
-    font-size: 55px;
+    font-size: 40px;
     margin-bottom: 10px;
 }
 
 #spotLight p{
-    font-size: 20px;
+    font-size: 30px;
+}
+
+#spotLight a:link{
+    color: white;
+}
+
+#spotLight a:visited{
+    color: white;
+}
+
+#spotLight a:hover{
+    color: #f26b27;
+}
+
+#spotLight a:active{
+    color: #f05032;
 }
 
 /*content*/
@@ -354,7 +370,7 @@ form{
     padding-bottom: 10px;
 }
 
-input[type=text], select, input[type=email], input[type=date]{
+input[type=text], select, input[type=email], input[type=date], input[type=number]{
   width: 95%;
   padding: 12px 20px;
   margin: 8px 0;
