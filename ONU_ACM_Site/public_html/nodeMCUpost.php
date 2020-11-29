@@ -5,16 +5,17 @@ $index = 1;
 
 $passedApiKey = $sensor = $tempValue = "";
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $passedApiKey = formatPassed($_POST["api_key"]);
+if($_SERVER["REQUEST_METHOD"] == "POST"){ //set things up to get data from a post request
+    $passedApiKey = formatPassed($_POST["api_key"]); //get the passed password from the NodeMCU
 
-    if($passedApiKey == $ApiKeyValue){
+    if($passedApiKey == $ApiKeyValue){ //used for security to validate that actions are only done if we get the correct password 
+        //get and submit the rest of the data
         $sensor = formatPassed($_POST["sensor"]);
         $tempValue = formatPassed($_POST["tempValue"]);
 
         $sql = "REPLACE INTO `NodeMCUData` (`id`, `sensor`, `temp_value`) VALUES ('" . $index . "','" . $sensor . "','" . $tempValue . "')";
         
-        $response = $dbc->query($sql);
+        $response = $dbc->query($sql); //the result of the attempt to put the data in the database
 
         if($response){
             echo "New record created successfully";

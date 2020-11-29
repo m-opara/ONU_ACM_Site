@@ -72,11 +72,12 @@ and open the template in the editor.
                     <h3>Current Temperature reported by the NodeMCU</h3>
                     <?php
                         require_once('../nodeMCU_out_mysqli_connect.php');
-                        $sql = "SELECT sensor, temp_value, reading_time FROM NodeMCUData WHERE id='1'";
+                        $sql = "SELECT sensor, temp_value, reading_time FROM NodeMCUData WHERE id='1'"; //The query for the database
 
-                        $result = $dbc->query($sql);
-                        if($result->num_rows > 0){
+                        $result = $dbc->query($sql); //The result returned from querying the database
+                        if($result->num_rows > 0){ //if the number of rows returned is greater than 0 (we got some result)
                             while($row = $result->fetch_assoc()) {
+                                //output the data
                                 $row_reading_time = $row["reading_time"];
                                 $date = date("l\, F jS\, Y", strtotime("$row_reading_time - 0 hours")) . " at " . date("h:i:s A", strtotime("$row_reading_time - 0 hours"));
                                 echo "<p>The current room temperature from the " . $row["sensor"] . " is " . $row["temp_value"] . " &#176;F which was last updated " . $date;
